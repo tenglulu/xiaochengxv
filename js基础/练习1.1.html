@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         var arrname=[];
+         var outwindow="";
+        var is = window.confirm("是否选择午餐");
+        if (is) {
+            var num=window.prompt("几个人吃饭");
+            for(var i=0;i<num;i++){
+                var name = window.prompt("请输入您的姓名！", "姓名");
+                arrname.push(name);   
+                }
+                for(var j=0;j<num;j++){  
+                    var lunch =chooselunch();
+                    alert(lunch);
+                        }
+        }
+                        function chooselunch(){
+                            var a =Math.random()*10;
+                    if(parseInt(a)=="0"){
+                        alert(arrname[j]+"吃炸鸡");
+                        }else if(parseInt(a)=="0"){
+                             outwindow=arrname[j]+"吃薯条";
+                            }else if(parseInt(a)=="1"){
+                            outwindow=arrname[j]+"吃水果";
+                            }else if(parseInt(a)=="2"){
+                                outwindow=arrname[j]+"吃冰淇凌";
+                            }else if(parseInt(a)=="3"){
+                                outwindow=arrname[j]+"吃水果";
+                            }else if(parseInt(a)=="4"){
+                                outwindow=arrname[j]+"吃烤冷面";
+                            }else if(parseInt(a)=="5"){
+                                outwindow=arrname[j]+"吃丸子";
+                            }else if(parseInt(a)=="6"){
+                                outwindow=arrname[j]+"吃麻辣烫";
+                            }else if(parseInt(a)=="7"){
+                                outwindow=arrname[j]+"吃火锅";
+                            }else if(parseInt(a)=="8"){
+                                outwindow=arrname[j]+"吃烤肉";
+                            }
+                            else{
+                                outwindow=arrname[j]+"吃披萨";
+                            }
+                            return outwindow;
+                        }
+        
+                    
+                    
+     </script>
+</body>
+</html>

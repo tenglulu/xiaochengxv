@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+        }
+       .div1{
+           width: 200px;
+           height: 200px;
+           border: 1px dashed black;
+           margin: 100px auto;
+           
+       }
+       .yuan{
+           width: 200px;
+           height: 200px;
+           border: 1px solid black;
+           border-radius: 50%;
+           
+           position: relative; 
+       }
+       .div2{
+           width: 5px;
+           height: 20px;
+           background-color: black;
+           margin: 0 auto;
+           position: absolute;
+           top: 0;
+           left: 50%;
+           margin-left: -2.5px;
+       }
+       .div3{
+           width: 5px;
+           height: 10px;
+           background-color:black;
+           margin: 0 auto;
+           position: absolute;
+           top: 0;
+           left: 50%;
+           margin-left: -2.5px;
+           transform: rotate(6deg);
+           transform-origin:0 100px;
+       }
+       .div4{
+           width: 5px;
+           height: 10px;
+           background-color:black;
+           position: absolute;
+           top: 0;
+           left: 50%;
+           margin-left: -2.5px;
+           transform: rotate(12deg);
+           transform-origin:0 100px;
+       }
+       .div5{
+           width: 5px;
+           height: 10px;
+           background-color:black;
+           position: absolute;
+           top: 0;
+           left: 50%;
+           margin-left: -2.5px;
+           transform: rotate(18deg);
+           transform-origin:0 100px;
+           
+       }
+       .div6{
+           width: 5px;
+           height: 10px;
+           background-color:black;
+           position: absolute;
+           top: 0;
+           left: 50%;
+           margin-left: -2.5px;
+           transform: rotate(24deg);
+           transform-origin:0 100px;
+           
+       }
+       /* .zhen{
+        position: absolute;
+           bottom: 50%;
+           left: 50%; */
+       
+       .hour{
+        position: absolute;
+           bottom: 50%;
+           left: 50%;
+           width: 3px;
+           height: 30px;
+           background-color: lightblue;
+       }
+       .minutes{
+        position: absolute;
+           bottom: 50%;
+           left: 50%;
+           width: 2px;
+           height: 45px;
+           background-color: blue;
+           animation-name:minutestext;
+           animation-duration: 3600s;
+           animation-iteration-count: infinite;
+           animation-timing-function: linear;
+           transform-origin: bottom;
+       }
+       .second{
+           width: 1px;
+           height: 90px;
+           background-color: tomato;
+           position: absolute;
+           bottom: 50%;
+           left: 50%;
+           animation-name: secondtext;
+           animation-duration: 60s;
+           animation-iteration-count: infinite;
+           animation-timing-function: linear;
+           transform-origin: bottom;
+       }
+       @keyframes secondtext{
+           0%{
+           transform: rotate(0deg);
+           }
+           100%{
+           transform: rotate(360deg);
+           }
+       }
+       @keyframes minutestext{
+           0%{
+           transform: rotate(0deg);
+           }
+           100%{
+           transform: rotate(360deg);
+           }
+       }
+    </style>
+</head>
+<body>
+    <div class="div1">
+            <div class="yuan">
+                    <div class="div2"></div>
+                    <div class="div3"></div>
+                    <div class="div4"></div>
+                    <div class="div5"></div>
+                    <div class="div6"></div>
+                    <div class="zhen">
+                         <div class="hour"></div>
+                         <div class="minutes"></div>
+                         <div class="second"></div>
+                    </div>
+            </div>
+    </div>
+    <div>
+
+    </div>
+</body>
+</html>

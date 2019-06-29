@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // var name = "zs";
+    // var num = 1;
+    // var bul = true;//布尔型 真假 true false
+    // //string number bool undefind null
+    // var a;
+    // a = 1;
+    // a = "123";
+    // a = true;//可以随意转化
+    // //数字不能开头 包含数字 字母 下划线 
+     
+
+
+//    var x=Math.random();console.log(x);
+//    var y=Math.random();console.log(y);
+//    var str=x>y ? x : y;
+//    console.log(str);
+   
+//    var today=new Date();
+//    console.log(today);
+//    var year =today.getFullYear();
+//    console.log(year);
+//   if(year%4==0 && year%100!=0 || year%400==0)
+
+
+// 89 * 58588
+//      function foo(a,b){
+//         return a*b;
+//       }
+//       var num = foo(89,5566);
+//       console.log(num);
+
+
+
+
+
+    //  function foo(a){
+         
+    //        return 4*a*a+3*a+2;
+    //   }
+    
+    //   var a=window.prompt("输入a");
+     
+    //   var num= foo(a);
+    //   console.log(num);
+
+
+
+
+
+    // function Min(x,y){
+    //     if(x>y){
+    //         return y;
+    //     }else if(x<y){
+    //         return x;
+    //     }
+    // }
+    // var x=window.prompt("输入x");
+    // var y=window.prompt("输入y");
+    // var num=Min(x,y);
+    // console.log(num);
+
+    // 返回值只能有一个 数组？试试
+    // function panduan(b){
+       
+    //         if(b%3==0 && b%5==0 && b%7==0){
+    //            console.log(b);
+    //         }
+    //     }
+    // for(var a=1;a<1000;a++){
+    //     panduan(a)
+           
+    //     }
+        
+       
+    //  function foo(n){
+    //     for(var i=1;i<n;i++){
+            
+    //     }
+    //  }   
+        
+   
+
+
+
+
+
+
+//    function foo(a){
+//       var a = Math.floor(Math.random()*101)
+//      console.log(a)
+//    }
+//    foo();
+
+
+ 
+
+
+// var today=new Date();
+//  var year = today.getFullYear();  
+//  var month=today.getMonth()+1;
+// var date=today.getDate();
+//  console.log("现在是"+year+"年"+month+"月"+date+"日")
+ 
+//  var arr=[a,b,1,2];
+// function CollectDigits(s){
+//     for (i=0;i<=s;i++){
+//      if(typeof(arr[i])=="number"){
+//          console.log(arr[i]);
+//      }
+//     }
+// }
+
+// var today=new Date();
+//    console.log(today);
+//    var year =today.getFullYear();
+//    console.log(year);
+var day=0;
+   months=new Array(31,28,31,30,31,30,31,31,30,31,30,31)
+   function IsLeapYear(year){
+    if(year%4==0 && year%100!=0 || year%400==0){
+       months=new Array(31,29,31,30,31,30,31,31,30,31,30,31)
+       console.log(months)
+    }else{console.log(months)
+    }
+   }
+  
+function DayOfYear(year,m,d){
+    IsLeapYear(year);
+    for(var i=0;i<m-1;i++){
+        day+=months[i];
+        
+    }
+    return day+d;
+}
+console.log(DayOfYear(2000,4,8));
+
+
+
+
+   
+    </script>
+</body>
+</html>

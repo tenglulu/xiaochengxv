@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+       
+    #box{
+        width: 200px;
+        height: 20px;
+        border:1px solid #000;
+    }
+    .yanse{
+        width: 0;
+        height: 20px;
+        background-color: blue;
+    }
+    .jindu{
+        color: red;
+    }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div class="yanse">
+                <div class="jindu">0</div>
+        </div>
+        
+    </div>
+    <button id="start">按钮</button>
+    <script>
+    var oBox=document.getElementById("box");
+    var oYanse=document.getElementsByClassName("yanse")[0];
+    var ojindu=document.getElementsByClassName("jindu")[0];
+     var oStart=document.getElementById("start");
+    
+     oStart.onclick=function(){
+         
+        var timer=setInterval(function(){
+            if(oYanse.offsetWidth==200){
+                clearInterval(timer);
+                return;
+            }
+            oYanse.style.width=oYanse.offsetWidth+2+"px";
+            ojindu.innrText=parseInt(ojindu.innrText)+1+"%";
+        },16);
+        
+         }
+    </script>
+</body>
+</html>

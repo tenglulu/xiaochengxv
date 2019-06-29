@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+            float: left;
+            font-size: 12px;
+            height: 40px;
+            line-height: 40px;
+            
+        }
+        a{
+            text-decoration: none;
+            color: #b0b0b0;
+            
+        }
+        .topbar-left .line{
+            margin: 0px 6px;
+        }
+        /* .clearfix::after{
+            content: "";
+            display: block;
+            clear: both;
+        }  */
+        .site-topbar{
+            width: 1420px;
+            height: 40px;
+            background-color: #333333;
+            
+        }
+        .topbar{
+            width: 1226px;
+            height: 40px;
+            background-color:#333333;
+            margin: 0 auto;
+            position: relative;
+            
+
+        }
+        .topbar-right{
+            position: absolute;
+            top: 0;
+            right: 0;
+            font-size: 12px;
+            
+            line-height: 40px;
+        }
+        .topbar-right::after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+        .right-cart{
+            width: 120px;
+            float: left;
+            background-color: #424242;
+            
+        }
+        .right-btn{
+            float: left;
+            
+        }
+        .right-btn .denglu,.right-btn .zhuce{
+            height: 40px;
+            padding: 0 5px;
+        }
+        .right-btn .tongzhi{
+            padding: 0 10px;
+        }
+        /* .down .dd-top{
+            width: 20px;
+            height: 20px;
+            background-color: aquamarine; */
+            /* transform: rotate(45eg);
+            margin: 0 auto; */
+        
+        .la{
+            height: 100px;
+            width: 316px;
+            background-color: blueviolet;
+            position: absolute;
+            top: 40px;
+            right: 0px;
+            visibility: hidden;
+        }
+        .right-cart:hover .la{
+        visibility: visible;
+        }
+        
+        .dd-top{
+            display: none;
+            height: 20px;
+            width: 20px;
+            background-color:brown;
+            transform: rotate(45deg);
+            margin:0 auto;
+            position: absolute;
+            top:30px;
+            right: 656px;
+        }
+        .dd-bottom{
+            display: none; 
+            height: 100px;
+            width: 100px;
+            background-color: aqua;
+            position: absolute;
+            top:40px;
+            right: 613px;
+            box-shadow: 0 1px 5px rgba(0,0,0,.5);
+            text-align: center;
+        }
+        .down:hover .drop-down{
+         display:block;
+        }
+
+
+       .site-header{
+           width: 1420px;
+           height: 100px;
+           
+       }
+       .sh-content{
+            width: 1226px;
+            height: 100px;
+            margin-left: auto;
+            margin-right: auto;
+            
+       }
+       .sh-content .header-logo{
+           width: 55px;
+           height: 55px;
+           background-color:#ff6700;
+           margin-top: 22.5px;
+           /* transform: translate(-50%,-50%); */
+       }
+       .header-logo img{
+          margin: auto;
+       }
+       .sh-content .header-nav,.sh-content .header-logo{
+           float: left;
+       }
+       .sh-content .header-nav{
+
+       }
+       .sh-content .header-search{
+           float: right;
+           
+       }
+       .header-search input{
+        width: 223px;
+        height: 48px;
+        padding: 0 10px;
+       }
+       
+       
+       .navMenu{
+           width: 1420px;
+           height: 230px;
+           position: relative;
+          background-color: #b0b0b0
+           
+       }
+       .navMenu .nm-content{
+           width: 1226px;
+           height: 229px;
+           position: absolute;
+           top: 0px;
+           /* background-color: red;  */
+           margin-left: 97px;
+          /* background-color: red; */
+       }
+       .nm-content li{
+           line-height: normal;
+           width: 204px;
+           height: 201px;
+           position: relative;
+           float: left;
+           text-align: center;
+           
+           padding: 35px 12px 0;
+       }
+      .nm-content .flags{
+          width: 204px;
+          height: 22px;
+      
+      }
+      .nm-content .flag{
+          width: 66px;
+          height: 22px;
+          padding: 1px 20px;
+          border: 1px solid #ff6700;
+      }
+      .nm-content .photo{
+          width: 160px;
+          height: 115px;
+      }
+      .nm-content img{
+          width: 160px;
+          height: 110px;
+      }
+      .nm-content .title{
+          width: 180px;
+          height: 20px;
+          
+          line-height: 20px;
+      }
+      .nm-content .price{
+          width: 180px;
+          height: 20px;
+
+      }
+    </style>
+</head>
+<body>
+    <div class="site-topbar">
+            <div class="topbar">
+                    <div class="topbar-left">
+                            <ul class="clearfix">
+                                <li><a href="">小米商城</a><span class="line">|</span></li>
+                                <li><a href="">MIUI</a><span class="line">|</span></li>
+                                <li><a href="">loT</a><span class="line">|</span></li>
+                                <li><a href="">云服务</a><span class="line">|</span></li>
+                                <li><a href="">金融</a><span class="line">|</span></li>
+                                <li><a href="">有品</a><span class="line">|</span></li>
+                                <li> <a href="">小爱开发平台</a><span class="line">|</span></li>
+                                <li><a href="">政企服务</a><span class="line">|</span></li>
+                                <li><a href="">资质证照</a><span class="line">|</span></li>
+                                <li><a href="">协议规则</a><span class="line">|</span></li>
+                                <li class="down">
+                                  <a href="">下载app</a><span class="line">|</span>
+                                  <div class="drop-down">
+                                     <div class="dd-top"></div>
+                                     <div class="dd-bottom"></div>
+                                  </div>
+                                </li>
+                                <li><a href="">Select Region</a></li>
+                            </ul>
+                        </div>
+                        <div class="topbar-right">
+                            <div class="right-btn">
+                                <a class="denglu" href="">登录</a>
+                                <span>|</span>
+                                <a class="zhuce" href="">注册</a>
+                                <span>|</span>
+                                <a class="tongzhi"href="">消息通知</a>
+                            </div>
+                            <div class="right-cart">
+                                    <a href=""><i class="iconfont icon-car"></i>购物车<span>(0)</span></a>
+                                    <div class="la">
+                                         
+                                    </div>
+                            </div>
+                            
+                        </div>
+            </div>
+            <div class="site-header">
+                <div class="sh-content">
+                    <div class="header-logo">
+                        <img src="https://s01.mifile.cn/i/mi-logo.png" alt="">
+                    </div>
+                    <div class="header-nav">
+                        <ul>
+                                <li><a href=" ">小米手机</a ></li>
+                                <li><a href="javascript:void(0);">红米</a ></li>
+                                <li><a href="javascript:void(0);">电视</a ></li>
+                                <li><a href="javascript:void(0);">笔记本</a ></li>
+                                <li><a href="javascript:void(0);">家电</a ></li>
+                                <li><a href="javascript:void(0);">新品</a ></li>
+                                <li><a href="javascript:void(0);">注路由器</li>
+                                <li><a href="javascript:void(0);">智能硬件</a ></li>
+                                <li><a href="javascript:void(0);">服务</a ></li>
+                                <li><a href="javascript:void(0);">社区</a ></li>
+                                
+                        </ul>
+                    </div>
+                    <div class="header-search">
+                        <input type="text">
+                        <button></button>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="navMenu">
+                 <div class="nm-content">
+                     <li>
+                         <div class="flags">
+                             <div class="flag">新品</div>
+                         </div>
+                         <a class="photo" href="">
+                            <img src="https://i1.mifile.cn/f/i/g/2015/cn-index/mi9-320.png" alt="">
+                         </a>
+                         <div class="title">
+                             <a href="">小米9</a>
+                         </div>
+                         <p class="price">999</p>
+                     </li>
+                     <li>
+                        <div class="flags">新品</div>
+                        <img src="" alt="">
+                        <div></div>
+                        <p></p>
+                     </li>
+                     <li>
+                        <div class="flags">新品</div>
+                        <img src="" alt="">
+                        <div></div>
+                        <p></p>
+                     </li>
+                     <li>
+                        <div class="flags">新品</div>
+                        <img src="" alt="">
+                        <div></div>
+                        <p></p>
+                     </li>
+                     <li>
+                        <div class="flags">新品</div>
+                        <img src="" alt="">
+                        <div></div>
+                        <p></p>
+                     </li>
+                     <li>
+                        <div class="flags">新品</div>
+                        <img src="" alt="">
+                        <div></div>
+                        <p></p>
+                     </li>
+                 </div>
+            </div>
+    </div>
+</body>
+</html>

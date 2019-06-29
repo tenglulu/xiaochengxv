@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    #box{
+        width: 300px;
+        height: 300px;
+        border: 1px dashed black;
+        margin: auto ;
+        position: relative;
+    }
+    .div1{
+    width: 300px;
+    height: 300px;
+    border: 1px solid black;
+    border-radius: 50%;
+    }
+    .li1{
+    width: 8px;
+    height: 20px;
+    background-color: black;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: rotate(6deg)
+    }
+    .hour{
+        position: absolute;
+           bottom: 50%;
+           left: 50%;
+           width: 6px;
+           height: 30px;
+           background-color: green;
+           transform-origin: bottom;
+       }
+       .minute{
+        position: absolute;
+           bottom: 50%;
+           left: 50%;
+           width: 4px;
+           height: 45px;
+           background-color: blue;
+           transform-origin: bottom;
+       }
+       .second{
+           width: 2px;
+           height: 90px;
+           background-color: tomato;
+           position: absolute;
+           bottom: 50%;
+           left: 50%;
+           transform-origin: bottom;
+       }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div class="div1"></div>
+        <div class="zhen">
+            <div class="hour"></div>
+            <div class="minute"></div>
+            <div class="second"></div>
+        </div>
+    </div>
+    
+    <script>
+       
+    var oBox=document.getElementById("box");
+    var oDiv1=document.getElementsByClassName("div1")[0];
+    
+    var clockHTML="";
+    for(var i=0;i<=60;i++){
+        clockHTML+='<li class="li1"></li>'
+    }
+    oDiv1.innerHTML=clockHTML
+    var oLi=document.getElementsByTagName("li")[0];
+    var arotate=oLi.style.transform;
+       console.log(arotate);
+//    for(var j=0;j<=60;j++){
+   
+//         // oLi[i].style.rotate=""
+//    }
+function run(){
+    var oHour=document.getElementsByClassName("hour")[0];
+    var oMinute=document.getElementsByClassName("minute")[0];
+    var oSecond=document.getElementsByClassName("second")[0];
+    var timer=new Date();
+    
+
+}
+   
+        
+     
+    </script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    #box{
+        width: 490px;
+        height: 170px;
+        margin: 0 auto;
+        position: relative;
+    }
+    .aimg1{
+        position: absolute;
+        top: 0;
+        display:block;
+    }
+    #img1{
+        position: absolute;
+        top: 0;
+        display:none;
+    }
+    #img2{
+        position: absolute;
+        top: 0; 
+        display: none;
+    }
+    #img3{
+        position: absolute;
+        top: 0;
+        display: none;
+    }
+    #img4{
+        position: absolute;
+        top: 0;
+        display: none;
+    }
+    #img5{
+        position: absolute;
+        top: 0;
+        display: none;
+    }
+    .anniu{
+        position: absolute;
+        top: 140px;
+        left: 810px;
+        border-radius: 50%;
+    }
+    .anniu button{
+        margin-right: 10px;
+        background-color: pink;
+    }
+    </style>
+</head>
+<body>
+    <div id="box">
+    <img class="aimg1" id="img1" src="./image/01.jpg" alt="">
+    <img id="img2" src="./image/02.jpg" alt="">
+    <img id="img3" src="./image/03.jpg" alt="">
+    <img id="img4" src="./image/04.jpg" alt="">
+    <img id="img5" src="./image/05.jpg" alt="">
+    </div>
+    <div class="anniu">
+        <button class="start">1</button>
+        <button class="start">2</button>
+        <button class="start">3</button>
+        <button class="start">4</button>
+        <button class="start">5</button>
+    </div>
+    <script>
+       
+    var oBox=document.getElementById("box");
+    var aImg=oBox.getElementsByTagName("img");
+    var oStart=document.getElementsByClassName("start");
+    var arr1=[];
+    for(var i=0;i<oStart.length;i++){
+        oStart[i].index=i;
+        
+        oStart[i].onmouseover=function(){
+            for(var j=0;j<oStart.length;j++){
+                // console.log(j)
+                // aImg[this.aa].style.display="block"
+                aImg[j].className="img1"
+            }
+        
+        }
+    }
+    
+     
+    </script>
+</body>
+</html>

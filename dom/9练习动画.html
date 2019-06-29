@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .div1{
+        width: 200px;
+        height: 40px;
+        background-color: aquamarine;
+        margin-bottom: 10px;
+    }
+    </style>
+</head>
+<body>
+    <div class="div1"></div>
+    <div class="div1"></div>
+    <div class="div1"></div>
+
+    <script>
+        var div1=document.getElementsByClassName("div1");
+    for(var i=0;i<div1.length;i++){
+       
+        div1[i].onmouseover=function(){
+            var _this=this;
+            setInterval(function(){
+                
+              _this.style.width=_this.offsetWidth+10+"px";  
+            },16)
+        }
+    }
+    
+    </script>
+</body>
+</html>

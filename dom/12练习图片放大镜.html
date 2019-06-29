@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+      *{
+        margin: 0;
+        padding: 0;
+      }
+    .box{
+        width: 300px;
+        height: 300px;
+        float: left;
+        overflow: hidden;
+    }
+    .box2{
+      width: 300px;
+      height: 300px;
+      float: left;
+      overflow: hidden;
+      margin-left: 30px;
+      position: relative;
+    }
+    .box::after{
+      content: "";
+      display: block;
+      clear: both;
+    }
+    .niu{
+      width: 300px;
+      height: 300px;
+    }
+    .niu2{
+      width: 600px;
+      height: 600px;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    #fang{
+      width: 150px;
+      height: 150px;
+      background-color: blue;
+      opacity: 0.4;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    </style>
+</head>
+<body>
+    <div class="box">
+      <img src="./image/niu.png" class="niu">
+      <div id="fang"></div>
+    </div>
+    <div class="box2">
+        <img src="./image/niu.png" class="niu2">
+    </div>
+    <script>
+      var oBox=document.getElementsByClassName("box")[0];
+      var oFang=document.getElementById("fang");
+      var oNiu2=document.getElementsByClassName("niu2")[0];
+  
+        
+        oBox.onmousemove=function(e){
+          var atop=e.clientY-75;
+        var aleft=e.clientX-75;
+          if(atop<0){
+             atop=0;
+           }
+           if(aleft<0){
+             aleft=0;
+           }
+          if(atop>150){
+            atop=150;
+          }
+          if(aleft>150){
+            aleft=150;
+          }
+          oFang.style.top=atop+"px";
+          oFang.style.left=aleft+"px";
+          oNiu2.style.top=-2*atop+"px"
+          oNiu2.style.left=-2*aleft+"px"
+          }
+      
+    
+      
+     
+       
+
+
+
+
+      
+    </script>
+</body>
+</html>
