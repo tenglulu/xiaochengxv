@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./jquery-3.4.1.js"></script>
+    <style>
+        th,td{
+            border: 1px solid black;
+        }
+        table{
+            border-collapse: collapse;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <th colspan="2" >鼠标点击表格就可以编辑</th>
+        </thead>
+        <tbody>
+            <tr >  <td>学号</td><td>姓名</td> </tr>
+            <tr class="child-02">  <td>1</td><td class="child-01">张三</td> </tr>
+            <tr class="child-03">  <td>2</td><td>赵六</td> </tr>
+            <tr class="child-04">  <td>3</td><td>王五</td> </tr>
+            <tr class="child-05">  <td>4</td><td>李四</td> </tr>
+          <input type="text" value="章三">
+        </tbody>
+
+    </table>
+    <script>
+        $(".child-01").click(function(){
+            if($(".child-01").children.length==1){
+
+            }
+
+            var thisVal=$(this).text();
+            $(this).text("")
+            $(".child-01").append('<input type="text" >')
+            $("input").val(thisVal);
+            $("input").focus()
+        })
+        $(".child-01").focusout(function(){
+
+            $(".child-01").empty();
+        })
+//         $("p").focusin(function() {
+//   $(this).find("span").css('display','inline').fadeOut(1000);
+// });
+        
+
+    </script>
+</body>
+
+</html>

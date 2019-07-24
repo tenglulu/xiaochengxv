@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./jquery-3.4.1.js"></script>
+    <style>
+    #box{
+        font-size: 50px;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="box">你爱好的运动是？</div>
+    <input type="checkbox">足球
+    <input type="checkbox">排球
+    <input type="checkbox">篮球
+    <input type="checkbox">羽毛球
+    <div>
+        <button id="achoose">全选</button>
+        <button id="nchoose">全不选</button>
+        <button id="fchoose">反选</button>
+    </div>
+
+    <script>
+        $("#achoose").on("click", function () {
+            $("input").prop("checked", true)
+            console.log($('input'));
+        })
+        $("#nchoose").on("click", function () {
+            $("input").prop("checked",false)
+            console.log($('input'));
+        })
+        console.log($('input'));
+        $("#fchoose").on("click", function () {
+           
+            // $("input[checked=false]").prop("checked",true)
+            
+        //    var a=$("input:checked")
+        //     var b=$("input:not(:checked)")
+        //     a.prop("checked",false)
+        //     b.prop("checked",true)
+
+            // $("input:checked").prop("checked",false)
+            // $("input:not(:checked)").prop("checked",true)
+            $("input").removeAttr("a","b")
+            $("input").removeAttr("b","b")
+            $("input:checked").attr("a","a")
+            $("input:not(:checked)").attr("b","b")
+            $("[a='a']").prop("checked",false)
+            $("[b='b']").prop("checked",true)
+        })
+       
+
+    </script>
+</body>
+
+</html>

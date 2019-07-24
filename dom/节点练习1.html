@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    
+    </style>
+</head>
+<body>
+    <script>
+
+    //    console.log(div1.childNodes);
+    //    console.log(div1.childNodes[0].nodeName);
+    // console.log(div1.parentNode.parentNode);
+    //    console.log(div1.parentNode.nodeName);
+    //    console.log(div1.parentNode.parentNode.nodeName);
+    //     console.log(div1.parentElement.parentElement.parentElement);
+        // console.log(document.childNodes);
+        
+    //    var arr=div1.childNodes.nodeName
+    //    console.log(arr);
+    if(document.nodeType==1){
+        console.log(document.nodeName);
+        
+    }
+       for(var i=0;i<document.childNodes.length;i++){
+           if(document.childNodes[i].nodeType==1){
+            //  递归
+            //  递归
+            console.log(document.childNodes[i].nodeName);
+           }
+           
+       }
+       
+
+    
+     
+    </script>
+</body>
+</html>

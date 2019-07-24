@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./jquery-3.4.1.js"></script>
+    <style>
+        *{
+            margin: 0;
+        }
+        #div1{
+            height: 1000px;
+            background-color: pink;
+            color:rgb(216, 98, 118);
+            font-size: 60px;
+        }
+        #div2{
+            height: 1000px;
+            background-color:powderblue;
+            color:rgb(216, 98, 118);
+            font-size: 60px;
+        }
+        #div3{
+            height: 1000px;
+            background-color:rgb(150, 212, 150);
+            color:rgb(216, 98, 118);
+            font-size: 60px;
+        }
+        li{
+            list-style: none;
+            float: left;
+            margin: 20px;
+        }
+        ul{
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li><a id="a1" href="#div1">第一页</a></li>
+        <li><a href="#div2">第二页</a></li>
+        <li><a href="#div3">第三页</a></li>
+    </ul>
+    <div id="div1">1</div>
+    <div id="div2">2</div>
+    <div id="div3">3</div>
+    <script>
+        console.log($("#div1").offset().top);
+        console.log($("#div2").offset().top);
+        console.log($("#div3").offset().top);
+        $("a").on("click",function(){
+            console.log($("#div2").offset().top);
+            console.log($(this).attr("href"));
+            
+            $("html,body").animate({
+                scrollTop:$($(this).attr('href')).offset().top,
+            },1000)
+        })
+
+    </script>
+</body>
+
+</html>

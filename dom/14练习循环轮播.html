@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    #img-ul li{
+        width: 100px;
+        height: 100px;
+        list-style: none;
+        background-color: black;
+        color: aliceblue;
+        text-align: center;
+        margin-right: 5px;
+        float: left;
+    }
+    .img-bar{
+        width: 430px;
+        height: 110px;
+        border: 2px solid black;
+        margin: 0 auto;
+        position: relative;
+        overflow: hidden;
+    }
+    #img-ul{
+        width: 1500px;
+        height: 100px;
+        position: absolute;
+        top: 5px;
+        left: 0;
+    }
+    
+    </style>
+</head>
+<body>
+        <div class="img-bar">
+                <ul id="img-ul" class="clearfix">
+                  <li>1</li>
+                  <li>2</li>
+                  <li>3</li>
+                  <li>4</li>
+                  <li>5</li>
+                  <li>1</li>
+                  <li>2</li>
+                  <li>3</li>
+                  <li>4</li>
+                  <li>5</li>
+                </ul>
+              </div>
+    <script>
+       var aBar=document.getElementsByClassName("img-bar")[0];
+       var oUl=document.getElementsByClassName("clearfix")[0];
+       var timer=null;
+       
+        aBar.onmouseover=function(){
+            timer=setInterval(function(){
+                
+                if(oUl.offsetLeft==-520){
+                    clearInterval(timer);
+                    oUl.style.left=0;
+                    
+                }else{
+                    oUl.style.left=oUl.offsetLeft-10+"px";
+                }
+            },800)
+            
+        }
+       
+        
+   
+     
+    </script>
+</body>
+</html>

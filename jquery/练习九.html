@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./jquery-3.4.1.js"></script>
+    <style>
+        .div1,.div2,.div3{
+            height: 140px;
+            background-color: rgb(113, 62, 131);
+            opacity: 0.3;
+            margin-bottom: 20px;
+            
+            
+            
+        }
+        .font1,.font2{
+            width: 80px;
+            height: 80px;
+            color: white;
+            font-size: 80px;
+            display: none;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="div1"><div class="font1">1</div></div>
+    <div class="div2"><div class="font2">1</div></div>
+    <div class="div3"></div>
+    <script>
+        // $(".div1").on("mousemove",function(){
+        //     $(this).text("1")
+        //     console.log($(this).text());
+        //     $(this).text(+1);
+            
+        // })
+        var oDiv1=document.getElementsByClassName("div1")[0];
+        var oFont1=document.getElementsByClassName("font1")[0]
+        oDiv1.onmousemove=function(){
+            oFont1.style.display="block"
+            oFont1.innerText++;
+        }
+        var oDiv2=document.getElementsByClassName("div2")[0];
+        var oFont2=document.getElementsByClassName("font2")[0];
+        oDiv2.onmousemove=function(){
+            oFont2.style.display="block"
+            oFont2.innerText++;
+            
+        }
+    </script>
+</body>
+
+</html>

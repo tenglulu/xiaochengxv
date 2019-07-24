@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./jquery-3.4.1.js"></script>
+    <style>
+    #select1{
+        width: 200px;
+        height: 350px;
+        font-size: 30px;
+        margin: 20px;
+    }
+    #select2{
+        width: 200px;
+        height: 350px;
+        font-size: 30px;
+        margin: 20px;
+    }
+    button{
+        width: 240px;
+        height: 40px;
+        margin-bottom: 5px;
+        font-size: 20px;
+    }
+    </style>
+</head>
+<body>
+   <select multiple name="" id="select1">
+       <option value="a">选项1</option>
+       <option value="a">选项2</option>
+       <option value="a">选项3</option>
+       <option value="a">选项4</option>
+       <option value="a">选项5</option>
+       <option value="a">选项6</option>
+   </select>
+   <select multiple name="" id="select2">
+
+   </select>
+   <div>
+        <button id="trbtn">选中添加到右面>></button>
+        <button id="rbtn"> <<选中删除到左面</button>
+   </div>
+    <div>
+        <button id="atrbtn">全部添加到右面>></button>
+        <button id="arbtn"><<全部删除到左面</button>
+    </div>
+
+    <script>
+    // $("option").on("dblclick",function(){
+    //     console.log(this);
+    //     $(this).appendTo("#select2")
+    // })
+    $("#select1").on("dblclick","option",function(){
+        console.log(this);
+        $(this).appendTo("#select2")
+    })
+    $("#select2").on("dblclick","option",function(){
+        console.log(this);
+        $(this).appendTo("#select1")
+    })
+    $("#trbtn").on("click",function(){
+        $("option:selected").appendTo("#select2")
+    })
+    $("#atrbtn").on("click",function(){
+        $("option").appendTo("#select2")
+    })  
+    $("#rbtn").on("click",function(){
+        $("option:selected").appendTo("#select1")
+    })
+    $("#arbtn").on("click",function(){
+        $("option").appendTo("#select1")
+    }) 
+    
+    </script>
+</body>
+</html>

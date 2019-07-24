@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./jquery-3.4.1.js"></script>
+    <style>
+        thead th{
+            border-bottom: 1px solid black;
+        }
+        table{
+            border-collapse: collapse;
+        }
+        th,td{
+            width: 80px;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <th></th>
+            <th>姓名</th>
+            <th>性别</th>
+            <th>暂住地</th>
+        </thead>
+        <tbody>
+            <tr class="child-01"> <td><input id="a" type="radio" name="test"></td> <td>李四</td><td>男</td><td>浙江宁波</td> </tr>
+            <tr class="child-02"> <td><input id="b" type="radio" name="test"></td> <td>张山</td><td>男</td><td>浙江宁波</td> </tr>
+            <tr class="child-03"> <td><input type="radio" name="test"></td> <td>赵六</td><td>男</td><td>浙江宁波</td> </tr>
+            <tr class="child-04"> <td><input type="radio" name="test"></td> <td>赵六</td><td>男</td><td>浙江宁波</td> </tr>
+            <tr class="child-05"> <td><input type="radio" name="test"></td> <td>赵六</td><td>男</td><td>浙江宁波</td> </tr>
+            <tr class="child-06"> <td><input type="radio" name="test"></td> <td>赵六</td><td>男</td><td>浙江宁波</td> </tr>
+        </tbody>
+
+    </table>
+    <script>
+        $("tbody tr").click(function(){
+            $(this).find(":radio").prop("checked",true); 
+        })
+        
+
+    </script>
+</body>
+
+</html>

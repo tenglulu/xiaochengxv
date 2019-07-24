@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./jquery-3.4.1.js"></script>
+    <style>
+        table{
+            border-collapse: collapse;
+        }
+        #inp {
+            width: 200px;
+            height: 30px;
+
+        }
+
+        th{
+            border-bottom: 2px solid black;
+            font-weight: bold;
+            font-size: 20px;
+            height: 30px;
+            width: 80px;
+            
+        }
+
+        td {
+            font-size: 20px;
+            height: 30px;
+            width: 80px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>筛选：</div>
+    <input type="text" id="inp">
+    <table>
+        <thead>
+            <th>姓名</th>
+            <th>性别</th>
+            <th>暂住地</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>张山</td>
+                <td>男</td>
+                <td>浙江宁波</td>
+            </tr>
+            <tr>
+                <td>李四</td>
+                <td>男</td>
+                <td>浙江宁波</td>
+            </tr>
+            <tr>
+                <td>王五</td>
+                <td>男</td>
+                <td>浙江宁波</td>
+            </tr>
+            <tr>
+                <td>赵六</td>
+                <td>男</td>
+                <td>浙江宁波</td>
+            </tr>
+            <tr>
+                <td>王六</td>
+                <td>男</td>
+                <td>浙江宁波</td>
+            </tr>
+            <tr>
+                <td>李字</td>
+                <td>男</td>
+                <td>浙江宁波</td>
+            </tr>
+            <tr>
+                <td>李一</td>
+                <td>男</td>
+                <td>浙江宁波</td>
+            </tr>
+        </tbody>
+
+    </table>
+    <script>
+
+        $("#inp").on("keyup", function () {
+            var a = $(this).val();
+            console.log(a);
+            $("tbody tr").css("display", "none")
+            $("tr:contains(" + a + ")").css("display", "table-row")
+
+            console.log($("tr:contains(" + a + ")"))
+
+            // $("tr:contains(李)").css("color","red")
+        })
+
+    </script>
+</body>
+
+</html>

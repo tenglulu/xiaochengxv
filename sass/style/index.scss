@@ -1,0 +1,14 @@
+$color1:#ff00ff;
+
+#div{
+    color:$color1;
+    .p1{
+        border: 1px solid $color1;
+    }
+}
+#div2{
+    background-color:$color1;
+}
+#div3{
+    background-color:red;
+}

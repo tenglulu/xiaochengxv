@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    #select1{
+        width: 200px;
+        height: 350px;
+        font-size: 30px;
+        margin: 20px;
+    }
+    #select2{
+        width: 200px;
+        height: 350px;
+        font-size: 30px;
+        margin: 20px;
+    }
+    button{
+        width: 240px;
+        height: 40px;
+        margin-bottom: 5px;
+        font-size: 20px;
+    }
+    </style>
+</head>
+<body>
+   <select multiple name="" id="select1">
+       <option value="a">选项1</option>
+       <option value="a">选项2</option>
+       <option value="a">选项3</option>
+       <option value="a">选项4</option>
+       <option value="a">选项5</option>
+       <option value="a">选项6</option>
+   </select>
+   <select multiple name="" id="select2">
+
+   </select>
+   <div>
+        <button id="trbtn">选中添加到右面>></button>
+        <button> <<选中删除到左面</button>
+   </div>
+    <div>
+        <button id="atrbtn">全部添加到右面>></button>
+        <button><<全部删除到左面</button>
+    </div>
+
+    <script>
+    var oSel1=document.getElementById("select1");
+    var oSel2=document.getElementById("select2");
+    var trbtn=document.getElementById("trbtn");
+    var atrbtn=document.getElementById("atrbtn");
+    var arr=[];
+    oSel1.ondblclick=function(e){
+        var nOption=e.target
+        console.log(nOption);
+        oSel2.options.add(nOption) 
+    }
+    oSel2.ondblclick=function(e){
+        // var nOption=e.target
+        // console.log(nOption);
+        oSel1.options.add(e.target) 
+    }
+    // oSel1.onchange=function(e){
+    //      for(var i=0;i<e.target.length;i++){
+    //         var arr=e.target[i];
+            
+    //         trbtn.onclick=function(){
+
+    //             console.log(arr);
+    //         }
+    //         }
+           
+    // }
+
+        trbtn.onclick=function(){
+            for(var i=0;i<oSel1.options.length;i++){
+                if(oSel1.options[i].selected){
+                    oSel2.options.add(oSel1.options[i]) 
+                }
+            }
+        }
+    
+        
+    
+    
+    </script>
+</body>
+</html>

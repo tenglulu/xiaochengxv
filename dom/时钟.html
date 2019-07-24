@@ -20,13 +20,15 @@
     border-radius: 50%;
     }
     .li1{
-    width: 8px;
-    height: 20px;
+    width: 4px;
+    height: 12px;
     background-color: black;
     position: absolute;
     top: 0;
     left: 50%;
-    transform: rotate(6deg)
+    transform-origin:0 150px;
+    list-style: none;
+    /* transform: rotate(0deg) */
     }
     .hour{
         position: absolute;
@@ -74,26 +76,33 @@
     
     var clockHTML="";
     for(var i=0;i<=60;i++){
-        clockHTML+='<li class="li1"></li>'
+        clockHTML+="<li style='transform:rotate("+i*6+"deg)'class='li1'></li>";
     }
     oDiv1.innerHTML=clockHTML
     var oLi=document.getElementsByTagName("li")[0];
-    var arotate=oLi.style.transform;
-       console.log(arotate);
 //    for(var j=0;j<=60;j++){
-   
-//         // oLi[i].style.rotate=""
+    // var arotate=oLi.style.transform;
+    //    console.log(arotate);
+        // oLi[i].style.rotate=""
 //    }
 function run(){
     var oHour=document.getElementsByClassName("hour")[0];
     var oMinute=document.getElementsByClassName("minute")[0];
     var oSecond=document.getElementsByClassName("second")[0];
     var timer=new Date();
+    // var hour=timer.getHours();
+    var minute=timer.getMinutes();
+    var second=timer.getSeconds();
+    var hour = timer.getHours()+minute/60;
     
-
+    oHour.style.transform="rotate("+30*hour+"deg)";
+    oMinute.style.transform="rotate("+6*minute+"deg)";
+    oSecond.style.transform="rotate("+6*second+"deg)";
 }
-   
-        
+   run();
+    setInterval(function(){
+    run();
+    },1000) 
      
     </script>
 </body>
