@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <script src="./vue.js"></script>
+    <style>
+    #app{
+        width: 500px;
+        height: 500px;
+    }
+    .active{
+        background-color: pink;
+    }
+    .activee{
+        display: block;
+    }
+
+    </style>
+</head>
+<body>
+    <div id="app">
+        <input  v-model="searchname" type="text" placeholder="搜索">
+        <button v-on:click="search">搜索</button>
+        <br>
+        <input v-model="tname" type="text" placeholder="名称" >
+        <input v-model="tprice" type="text" placeholder="0">
+        <button v-on:click="addEvent">添加</button>
+            <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th>状态</th>
+                        <th>名称</th>
+                        <th>价格</th>
+                        <th></th>
+                      </tr>
+                    </thead>
+                    <tbody >
+                      <tr  v-for="(val,index) in shangpin" @click="checkLine(index)" :class="{active:val.isActive}">
+                        <th  scope="row"><input type="checkbox" v-model="gChe" :value="val.id"></th>
+                        <td >{{val.name}}</td> 
+                        <td>{{val.price}}</td>
+                        <td><button v-on:click="delevent(index)">删除</button></td>
+                      </tr>
+                      <tr>
+                          <td>合计：</td>
+                          <td>{{gNum}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <button @click="alldelete()">删除选中</button>
+                  {{gChe}}
+    </div>
+    <script>
+    let vm = new Vue({
+        el:"#app",
+        data:{
+            
+            isChecked:[],
+              shangpin:[
+                  {
+                      name:"衬衫",
+                      price:"200",
+                      id:1,
+                      isActive:false,
+                      
+                  },
+                  {
+                      name:"裤子",
+                      price:"150",
+                      id:2,
+                      isActive:false,
+                      
+                  },
+                  {
+                      name:"外套",
+                      price:"500",
+                      id:3,
+                      isActive:false,
+                      
+                  },
+              ],
+              
+            tname:"",
+            tprice:"",
+            
+           
+            searchname:"",
+            },
+            narr:[],
+       methods:{
+        search(){ 
+            console.log(this.searchname);
+            var narr=[];
+            for(let i=0;i<this.shangpin.length;i++){
+                console.log(this.shangpin[i].name,this.searchname);
+                if(this.shangpin[i].name.includes(this.searchname)){
+                    narr.push(this.shangpin[i])
+                }
+            }
+            this.shangpin = narr;
+        },
+        addEvent(){
+            console.log(this.tname);
+            console.log(this.tprice);
+             this.shangpin.push({
+                 name:this.tname,
+                 price:this.tprice,
+                 id:0,
+                 isActive:false,
+             });
+            for(let i=0;i<this.shangpin.length;i++){
+                this.shangpin[i].id=i+1
+            }
+            console.log(this.shangpin);
+        },
+        delevent(index){
+            this.shangpin.splice(index,1)
+        },
+        alldelete(){
+            let newarr=[];
+            newarr=this.shangpin.filter(function(val){
+                if(!val.isActive){
+                    return val;
+                }
+            })
+           this.shangpin=newarr;
+        },
+        checkLine(index){
+            this.shangpin[index].isActive=!this.shangpin[index].isActive;
+        }
+       },
+       computed:{
+           gChe(){
+            let arr=[];
+            this.shangpin.map(function(val,index){
+                if(val.isActive){
+                    arr.push(val.id)
+                }
+            })
+            return arr;
+           },
+           gNum(){
+               let num=0;
+            this.shangpin.map(function(val,index){
+                if(val.isActive){
+                    num+=parseInt(val.price)
+                }
+            })
+            return num;
+
+            
+           }
+       },
+        
+    })
+    </script>
+</body>
+</html>

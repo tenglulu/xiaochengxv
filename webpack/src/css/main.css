@@ -7,3 +7,12 @@ h1{
     height: 300px;
     background-image: url("../image/01.jpg");
 }
+::placeholder{
+    background-color: red;
+}
+.aa{
+    color: blue;
+}
+#div3{
+    color: antiquewhite;
+}

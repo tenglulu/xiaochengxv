@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+    <style>
+        .box{
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color:rgba(0,0,0,.3);
+        }
+        .box1 {
+            width: 400px;
+            height: 300px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -150px;
+            margin-left: -200px;
+            border: 1px solid black;
+        }
+        #header {
+            height: 50px;
+            background-color: black;
+            color: aliceblue;
+        }
+        .closebox{
+            float: right;
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <button @click="show(1)">登录</button>
+        <button @click="show(0)">注册</button>
+        <div :is="com" @closebox="close">
+            <span slot="title">{{title}}</span>
+            <span slot="info">{{info}}</span>
+        </div>
+        <!-- <weichuang>
+
+        </weichuang> -->
+    </div>
+    <template id="tem">
+        <div>
+            <div class="box">
+                <div class="box1">
+                    <div id="header">
+                        <slot name="title"></slot>
+                        <div class="closebox" @click="$emit('closebox')">X</div>
+                    </div>
+                    <div id="bottom">
+                        <slot name="info"></slot>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </template>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                title:"操作",
+                info:"用户名",
+                com:null
+            },
+            methods:{
+                close(){
+                    this.com=null;
+                },
+                show(key) {
+                    this.com="weichuang";
+                    if(key==0){
+                        this.title="注册"
+                        this.info="注册用户名"
+                    }else{
+                        this.title="登录"
+                        this.info="登录用户名"
+                    }
+
+                }
+            },
+            components: {
+                "weichuang": {
+                    template: "#tem"
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

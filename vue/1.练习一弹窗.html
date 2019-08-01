@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+    <style>
+    .box1{
+        width: 400px;
+        height: 300px;
+        margin: auto auto;
+        border: 1px solid black;
+       
+    }
+    #header{
+        width: 400px;
+        height: 50px;
+        background-color: black;
+        color: aliceblue;
+    }
+    .active{
+        display: block;
+    }
+    </style>
+</head>
+<body>
+    <div id="app">
+            <button @click="show">登录</button>
+            <button>注册</button>
+        <weichuang :str="isActive"></weichuang>
+    </div>
+    <template id="tem">
+        <div>
+            <div v-bind:class="{active:str}" class="box1" >
+                <div id="header">
+                    <span>登录</span>
+                    <div>*</div>
+                </div>
+                <div id="bottom">
+                    <span>用户名</span>
+                    <input type="text">
+                    <span>密码</span>
+                    <input type="text">
+                    <button>登录</button> 
+                </div>
+            </div>
+        </div>
+    </template>
+    <script>
+    new Vue({
+        el:"#app",
+        data:{
+            isActive:false,
+        },
+        methods:{
+            show(){
+                this.isActive=true;
+                
+            }
+        },
+        components:{
+            weichuang:{
+                template:"#tem",
+                props:["str"]
+                
+                
+
+            }
+        }
+    })
+    </script>
+</body>
+</html>

@@ -24,12 +24,12 @@
     #img1{
         position: absolute;
         top: 0;
-        display:none;
+        display:block;
     }
     #img2{
         position: absolute;
         top: 0; 
-        display: none;
+        display: block;
     }
     #img3{
         position: absolute;
@@ -78,17 +78,11 @@
     var oBox=document.getElementById("box");
     var aImg=oBox.getElementsByTagName("img");
     var oStart=document.getElementsByClassName("start");
-    var arr1=[];
+
     for(var i=0;i<oStart.length;i++){
-        oStart[i].index=i;
-        
         oStart[i].onmouseover=function(){
-            for(var j=0;j<oStart.length;j++){
-                // console.log(j)
-                // aImg[this.aa].style.display="block"
-                aImg[j].className="img1"
-            }
-        
+            oStart[i].index=i
+            console.log(this.index)
         }
     }
     

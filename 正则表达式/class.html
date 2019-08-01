@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let str = "hello word";
+        // let reg = /hello/;
+        // let reg2 = new RegExp("hello")
+        // console.log(reg.test(str));
+        // console.log(reg.exec(str));
+        // console.log(reg2.test(str));
+
+        // let str ="acccain";
+        // let reg =/c{2,3}/;
+        // console.log(reg.exec(str));
+        
+        // let str ="acccaincccc";
+        // let reg =/c{3,4}/;
+        // console.log(reg.exec(str));
+        
+        // let str ="acccaincccc";
+        // let reg =/c{0,1}/;
+        // console.log(reg.exec(str));
+
+    //    let str= "ababadae"
+    //    let reg=/a/g;
+    //    var str2=str.replace(reg,"_");
+    //    console.log(str2);
+         
+    // let str = "hello world";
+    // let reg = /(?<a>hello) (?<b>world)/;//括号之间需要有空格
+    // // console.log(reg.exec(str));
+    // let str2 =str.replace(reg,"$2 $1");
+    // console.log(str2);
+    
+    // let str = "30CAC0040";
+    // let str2 = "3SFASDF92"
+    // let reg =/\d+$/;  
+    // console.log(reg.exec(str));
+    // console.log(reg.exec(str2));
+    
+    //手机号码正则表达式
+//     正则验证手机号，忽略前面的0，支持130-139，150-159。忽略前面0之后判断它是11位的。
+
+// 例：013889294444 ( true )
+
+// 例：13889294444 ( true )
+     let str = "013889294444"  
+     let str2 = "13889294444" 
+    let reg1 =/^0\d{1,11}|^1\d{1,10}/;
+    let reg1 =/0(13|15)\d{9}/;
+    console.log(reg1.exec(str));
+    console.log(reg1.exec(str2));
+    
+    //用户名正则表达式 
+    // 正则验证用户名，包含数字、字母、下划线11位。
+    let str3 = "a12345678D_"
+    let reg2 =/^\w{11}$/;
+    console.log(reg2.exec(str3));
+    
+    // 日期正则表达式
+    let str4 = "2019-07-25"
+    let str5 ="2019年07月25日"
+    let reg3 = /^\d{4}(-|年)\d{2}(-|月)\d{2}/;
+    console.log(reg3.exec(str4));
+    console.log(reg3.exec(str5));
+    </script>
+</body>
+</html>
