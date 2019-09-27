@@ -83,4 +83,7 @@ export default {
 .fade-leave-to{
   transform: translateX(100%)
 }
+li{
+  list-style: none;
+}
 </style>

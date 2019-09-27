@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/react.development.js"></script>
+    <script src="./js/react-dom.development.js"></script>
+    <script src="./js/babel.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+    .row{
+        margin-bottom: 40px;
+    }
+    .dolist{
+        width: 900px;
+        
+    }
+    </style>
+</head>
+<body>
+
+   
+    <div id="root"></div>
+    <script type="text/babel">
+    class Ttable extends React.Component{
+        constructor(props){
+            super(props)
+        }
+        render(){
+            let tableli=this.props.dotable
+            console.log(this.props.dotable);
+            let todolist=tableli.map((item,index)=>{
+                console.log(item,index)
+                    return(
+                        <tr key={index}>
+                        <th scope="row">
+                            <input type="checkbox"></input>
+                            </th>
+                        <td>{item.info}</td>
+                        <td>{item.time}</td>
+                        <td>{item.fortime}</td>
+                        <td><button>删除</button></td>
+                        </tr>
+                    )
+                })
+            return(
+                <div>
+                    <table className="table">
+                <thead className="thead-dark">
+                    <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">待办事项</th>
+                    <th scope="col">代办时间</th>
+                    <th scope="col">预计用时</th>
+                    <th scope="col">操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {todolist}
+                </tbody>
+                </table>
+            </div>
+            )
+        }
+    }
+
+    class TForm extends React.Component{
+            constructor(props){
+                super(props)
+                this.state={
+                    infoName:"",
+                    infoTime:"",
+                    infoFortime:"",
+                    
+
+                }
+            }
+            infoname(event){
+                // console.log(event.target.value)
+                // this.props.tinfoName=event.target.value
+                this.setState({
+                    infoName:event.target.value
+                })
+            }
+            infotime(event){
+                // console.log(event.target.value)
+                this.setState({
+                    infoTime:event.target.value
+                })
+            }
+            infofortime(event){
+                // console.log(event.target.value)
+                this.setState({
+                    infoFortime:event.target.value
+                })
+            }
+            addinfo(){
+                
+                 let   itemlist=[{
+                        info:this.state.infoName,
+                        time:this.state.infoTime,
+                        fortime:this.state.infoFortime
+                    }]
+               
+                // let itemlists=this.state.itemlist
+                this.props.add(itemlist)
+            }
+            
+            
+            render() {
+                return (    
+                    <div>
+                       
+                            <div className="row">
+                                <div className="col">
+                                <input onChange={this.infoname.bind(this)}  type="text" className="form-control" placeholder="info"></input>
+                                </div>
+                                <input onChange={this.infotime.bind(this)} type="date"/>
+                                <div className="col">
+                                <input onChange={this.infofortime.bind(this)} type="text" className="form-control" placeholder="fortime"></input>
+                                </div>
+                                <button onClick={this.addinfo.bind(this)}>添加</button>
+                            </div>
+                            
+                    </div>        
+                )
+            }
+        }
+
+    class Todolist extends React.Component{
+            constructor(props){
+                super(props)
+                this.state={
+                    doli:[
+                        {
+                            info:"上课",
+                            time:"2019-08-08",
+                            fortime:2,
+                            id:1,
+                            isActive:false
+                        },
+                        {
+                            info:"吃饭",
+                            time:"2019-08-08",
+                            fortime:2,
+                            id:1,
+                            isActive:false
+                        },
+                        {
+                            info:"喝水",
+                            time:"2019-08-08",
+                            fortime:2,
+                            id:1,
+                            isActive:false
+                        },
+                    ]
+                }
+            }
+            adddoli(itemlists){
+                console.log(itemlists);
+                
+                this.setState({
+                    doli:itemlists
+                })
+            }
+            render() {
+                return (
+                    <div className="dolist">
+                        <TForm />
+                        <Ttable dotable={this.state.doli} add={this.adddoli.bind(this)}/>
+                    </div>
+                    
+                )
+            }
+            }
+            
+        
+        ReactDOM.render(
+            <Todolist/>,
+            document.getElementById("root")
+        )
+    </script>
+</body>
+</html>

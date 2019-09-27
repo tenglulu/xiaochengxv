@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/react.development.js"></script>
+    <script src="./js/react-dom.development.js"></script>
+    <script src="./js/babel.min.js"></script>
+    <style>
+    .mosk{
+            position: fixed;
+            top:0;
+            left:0;
+            right:0;
+            bottom:0;
+            background-color: rgba(0,0,0,.3);
+        }
+        .dialog-content{
+            width: 400px;
+            height:300px;
+            border:1px solid #000;
+            position: absolute;
+            top:50%;
+            left:50%;
+            margin-top:-150px;
+            margin-left:-200px;
+        }
+        .dialog-header{
+            height:50px;
+            background-color:#000;
+            color:#fff;
+        }
+        .close{
+            float:right;
+        }
+    </style>
+</head>
+<body>
+
+    <div></div>
+    <div id="root"></div>
+    <script type="text/babel">
+    class Tcontent extends React.Component{
+        constructor(props){
+            super(props)
+
+        }
+        render(){
+            return(
+                <div className="mosk">
+                <div className="dialog-content">
+                    <div className="dialog-header">{this.props.name}
+                        <span className="close" >X</span>
+                    </div>
+                    <div className="dialog-inner"></div>
+                </div>
+            </div>
+            )
+        }
+    }
+        class Tbutton extends React.Component{
+            constructor(props){
+                super(props)
+                this.state={
+
+                }
+            }
+            clickdia(){
+                this.props.clickdialing()
+            }
+            render() {
+                return (
+                    <div>
+                        <button onClick={this.clickdia.bind(this)}>登录</button>
+                        <button>注册</button>
+                        <Tcontent name={"登录"}/>
+                        <Tcontent name={"注册"}/>
+
+                    </div>
+                    
+                )
+            }
+        }
+        ReactDOM.render(
+            <Tbutton/>,
+            document.getElementById("root")
+        )
+    </script>
+</body>
+</html>

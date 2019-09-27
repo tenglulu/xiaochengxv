@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    
+    
+    </style>
+</head>
+<body>
+
+    <script>
+   function Person(name,age){
+    this.name=name;
+    this.age=age;
+   }
+   Person.prototype.say=function(){
+       console.log("haha");
+   }
+   var p1= new Person("ls",21)
+   console.log(p1);
+   //继承属性
+   function Coder(name,age){
+    Person.call(this,name,age)//调用父类的Person.call()方法 继承属性
+   }
+   //继承方法
+   Coder.prototype=new Person();
+   Coder.prototype.constructor=Coder;//Coder prtototype原型下的constructor属性应该指向它的构造函数Constructor （构造函数下的原型属性指向他的原型）
+
+   var c1=new Coder("zs",20);
+   console.log(c1);
+   c1.say()
+   
+    </script>
+</body>
+
+</html>

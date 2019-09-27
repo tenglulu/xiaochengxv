@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/react.development.js"></script>
+    <script src="./js/react-dom.development.js"></script>
+    <script src="./js/babel.min.js"></script>
+</head>
+<body>
+    <input type="date">
+    <div id="root"></div>
+    <script type="text/babel">
+    class Aoo extends React.Component{
+        constructor(props){
+            super(props)
+        }
+        diaobing(){
+            this.props.diAo()
+            // this.setState({
+            //         acount:this.state.acount+10
+            //     })
+        }
+        render(){
+                return (
+                    <div>
+                    <div>将军{this.props.name}有{this.props.solider}万士兵</div>
+                    <button onClick={this.diaobing.bind(this)}>调兵</button>
+                    </div>
+                )
+            }
+    }
+        class King extends React.Component{
+            constructor(props){
+                super(props)
+                this.state={
+                    kcount:100,
+                    acount:100,
+                    bcount:100,
+                }
+            }
+            diaob(){
+                let Acount =this.state.acount;
+                let Bcount=this.state.bcount;
+                if (name=="A") {
+                    Acount+=10
+                }else{
+                    Bcount+=10
+                }
+                this.setState({
+                    kcount:this.state.kcount-10,
+                    acount:Acount,
+                    bcount:Bcount
+                })
+            }
+            render(){
+                return (
+                    <div>
+                        <div>国王有{this.state.kcount}万士兵</div>
+                        <Aoo diAo={this.diaob.bind(this)} solider={this.state.acount} name={"A"}/>
+                        <Aoo diAo={this.diaob.bind(this)} solider={this.state.bcount} name={"B"}/>
+                    </div>
+                )
+            }
+        }
+        ReactDOM.render(
+            <King/>,
+            document.getElementById("root")
+        )
+    </script>
+</body>
+</html>

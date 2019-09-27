@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    
+    
+    </style>
+</head>
+<body>
+
+    <script>
+        //节流
+   function jieliu(fn,delay){
+        var startTime = 0;
+        return function(){
+            var nowTime = Date.now();
+            if(nowTime-startTime>delay){
+                fn.call(this)
+                startTime=nowTime;
+            }
+        }
+   }
+   document.onmousemove=jieliu(function foo(){
+       console.log(Date.now());
+       console.log(this);
+       
+       
+   },3000)
+
+    </script>
+</body>
+
+</html>

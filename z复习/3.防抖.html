@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    
+    
+    </style>
+</head>
+<body>
+    <button class="btn">click</button>
+    <script>
+        //防抖 用于搜索
+   function fangdou(fn,delay){
+        var timer = null;
+        return function(){
+            clearTimeout(timer);
+            timer = setTimeout(()=>{
+                fn.apply(this)
+            },delay)
+        }
+   }
+   var oBtn = document.getElementsByClassName("btn")[0];
+   oBtn.onclick=fangdou(function foo(){
+       console.log(Date.now());
+       console.log(this);
+       
+       
+   },300)
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Documen</title>
+    <script src="./jquery/jquery-3.4.1.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css"
+        integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+
+    <style>
+        .navbar {
+            background-color: rgba(0, 0, 0);
+            color: white;
+            padding-top: 5px;
+            line-height: 28px;
+            height: 20px;
+            font-size: 10px;
+            min-height: 40px;
+            font-weight: 450;
+        }
+
+        .navbottom-content {
+            display: block;
+            content: "";
+            clear: both;
+        }
+
+        .navbar p {
+            color: white;
+        }
+
+        .navbar button {
+            color: white;
+            background-color: rgba(51, 100, 174);
+            border: none;
+            height: 28px;
+
+        }
+
+        .navleft {
+            float: left;
+        }
+
+        .navright p,
+        .navright button,
+        .navright input {
+            float: right;
+            margin: 0 12px;
+            border-radius: 4px;
+        }
+
+        .navright input {
+            margin-right: -5px;
+            width: 150px;
+            height: 28px;
+            padding: 8px;
+           
+        }
+
+        .navbottom-content p {
+            float: left;
+            display: block;
+        }
+
+        .navbottom-content {
+            margin: 0 auto;
+            width: 200px;
+        }
+
+        nav:nth-last-child(1) {
+            margin-bottom: 5px;
+        }
+
+        .commodity-content {
+            padding-top: 50px;
+            /* padding-left: 350px; */
+            padding-bottom: 45px;
+            width: 920px;
+            margin: 0 auto;
+            
+        }
+
+        .nav-stacked {
+            width: 200px;
+            font-size: 10px;
+            margin-bottom: 15px;
+            border-left: 1px solid rgb(212, 210, 210);
+            border-right: 1px solid rgb(212, 210, 210);
+            border-radius: 4px;
+        }
+
+        .nav-stacked li {
+            border-bottom: 1px solid rgb(224, 222, 222);
+            height: 32px;
+            line-height: 12px;
+        }
+        .cc-left{
+            width: 200px;
+            float: left;
+        }
+        .nav-pills>li>a {
+    border-radius: 4px  4px  0 0;
+}
+       
+        .number{
+            float: right;
+            height: 20px;
+            margin-top: -6px;
+            color: white;
+            border-radius: 4px;
+           border: none;
+        }
+        .nav>li>a {
+            padding: 10px 12px;
+        }
+        .navone li:nth-child(2) button,.navthree li:nth-child(5) button{
+            background-color:rgba(51, 100, 174);
+        }
+        .nav li:nth-child(3) button,.navone li:nth-child(6) button{
+            background-color:rgb(51, 174, 51);
+        }
+        .navone li:nth-child(4) button,.navtwo li:nth-child(2) button,.navthree li:nth-child(6) button{
+            background-color:rgb(221, 6, 6);
+        }
+        .navone li:nth-child(5) button,.navtwo li:nth-child(4) button,.navthree li:nth-child(4) button{
+            background-color:rgb(108, 191, 224);
+        }
+        .navthree li:nth-child(2) button,.navthree li:nth-child(7) button{
+            background-color:rgb(253, 209, 13);
+        }
+        .title{
+            width: 670px;
+            height: 30px;
+            background-color: rgb(243, 243, 243);
+            margin-bottom: 10px;
+            border-radius: 4px;
+            padding: 0 10px;
+            color: gray;
+            line-height: 30px;
+        }
+        
+        .title span:nth-child(1){
+            color: rgba(51, 100, 174);
+        }
+        .cc-right{
+            margin-left: 20px;
+            float: left;
+        }
+        .right-box div{
+            width: 210px;
+            /* height: 300px; */
+            border: 1px solid rgb(224, 222, 222);
+            border-radius: 4px;
+            float: left;
+            margin-right: 20px;
+            margin-bottom: 10px;
+            padding: 0 5px;
+
+        }
+        .caption{
+            float: left;
+        }
+        .clearfix::after{
+            display: block;
+            clear: both;
+            content: "";
+        }
+        .details {
+           text-align: center;
+           font-size: 4px;
+        }
+        .details img{
+            width: 144px;
+            height: 144px;
+        }
+        .details button{
+            background-color: rgb(53, 167, 53);
+            border-radius: 4px;
+            border: none;
+            color: white;
+            height: 22px;
+            margin-bottom: 10px;
+        }
+        .details p{
+            margin: 6px 0px;
+        }
+        .details p:nth-child(2){
+            color: rgba(51, 100, 174);
+            font-weight: 500;
+            font-size: 18px;
+        }
+        .details p:nth-child(3){
+            color: rgb(228, 2, 2);
+            font-weight: 500;
+            font-size: 14px;
+        }
+        .details p:nth-child(4){
+            color: rgba(51, 100, 174);
+            font-size: 4px;
+        }
+        .details p:nth-child(5){
+            color: gray;
+            font-size: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" id="nav">
+        <div class="navcontent">
+            <p class="navleft">电子商城</p>
+            <div class="navright">
+                <p>登录</p>
+                <p>注册</p>
+                <p>商品</p>
+                <button>搜索</button>
+                <input type="text" placeholder="输入商品名称...">
+            </div>
+        </div>
+    </nav>
+    <div class="commodity-content clearfix">
+       
+                <div class="cc-left">
+                        <ul class="nav nav-pills nav-stacked navone">
+                            <li role="presentation" class="active"><a href="#">电子产品</a></li>
+                            <li role="presentation"><a href="#">手机 <button class="number ">234</button></a> </li>
+                            <li role="presentation"><a href="#">笔记本 <button class="number">34</button></a> </li>
+                            <li role="presentation"><a href="#">平板 <button class="number">4</button></a></li>
+                            <li role="presentation"><a href="#">显示器 <button class="number">434</button></a></li>
+                            <li role="presentation"><a href="#">游戏机 <button class="number">34</button></a></li>
+                        </ul>
+                        <ul class="nav nav-pills nav-stacked navtwo">
+                            <li role="presentation" class="active"><a href="#">电子产品 </a></li>
+                            <li role="presentation"><a href="#">手机 <button class="number">300</button></a></li>
+                            <li role="presentation"><a href="#">笔记本 <button class="number">340</button></a></li>
+                            <li role="presentation"><a href="#">平板 <button class="number">735</button></a></li>
+                        </ul>
+                        <ul class="nav nav-pills nav-stacked navthree">
+                            <li role="presentation" class="active"><a href="#">电子产品 </a></li>
+                            <li role="presentation"><a href="#">手机 <button class="number">456</button></a></li>
+                            <li role="presentation"><a href="#">笔记本 <button class="number">156</button></a></li>
+                            <li role="presentation"><a href="#">平板 <button class="number">400</button></a></li>
+                            <li role="presentation"><a href="#">显示器 <button class="number">89</button></a></li>
+                            <li role="presentation"><a href="#">游戏机 <button class="number">60</button></a></li>
+                            <li role="presentation"><a href="#">平板 <button class="number">567</button></a></li>
+                        </ul>
+                    </div>
+                    <div class="cc-right">
+                        <div>
+                                <div class="title">
+                                        <span>首页</span>
+                                        <span>/</span>
+                                        <span>手机</span>
+                                    </div>
+                                   <div class="right-box clearfix">
+                                       <div class="details">
+                                            <img src="https://cdn.itbegin.com//pics/admin/2017/6/2e393b86b0db4fa1a56f976aac1c653e.jpg" alt="">
+                                            <p>oppo</p>
+                                            <p>1599</p>
+                                            <p>oppo A57 3GB+32G内存双版</p>
+                                            <p>黑色 全网通4G手机 双卡双待</p>
+                                            <button>立即购买</button>
+                                       </div>
+                                       <div class="details">
+                                            <img src="https://cdn.itbegin.com//pics/admin/2017/6/2e393b86b0db4fa1a56f976aac1c653e.jpg" alt="">
+                                            <p>荣耀</p>
+                                            <p>1598</p>
+                                            <p>荣耀8 3GB+32GB</p>
+                                            <p>全网通版 珠光白</p>
+                                            <button>立即购买</button>
+                                       </div>
+                                       <div class="details">
+                                            <img src="https://cdn.itbegin.com//pics/admin/2017/6/2e393b86b0db4fa1a56f976aac1c653e.jpg" alt="">
+                                            <p>iPhone 7</p>
+                                            <p>6388</p>
+                                            <p>Apple iPhone 7 Plus（A1661）128G</p>
+                                            <p>金色 移动联通电信4G手机</p>
+                                            <button>立即购买</button>
+                                       </div>
+                                   </div>
+                        </div>
+                        <div>
+                            
+                           <div class="title">
+                            <span>首页</span>
+                            <span>/</span>
+                            <span>笔记本</span>
+                        </div>
+                           <div class="right-box clearfix">
+                                <div class="details">
+                                        <img src="https://cdn.itbegin.com//pics/admin/2017/6/636f83f02480403e94ab28376ca135f7.jpg" alt="">
+                                        <p>Macbook Air</p>
+                                        <p>5988</p>
+                                        <p>Apple Macbook Air 13.3英寸笔记本电脑</p>
+                                        <p>英寸笔记本电脑</p>
+                                        <button>立即购买</button>
+                                   </div>
+                                   <div class="details">
+                                        <img src="https://cdn.itbegin.com//pics/admin/2017/6/636f83f02480403e94ab28376ca135f7.jpg" alt="">
+                                        <p>戴尔DELL灵越</p>
+                                        <p>4199</p>
+                                        <p>戴尔DELL灵越5565-R2945A 15.6英寸笔记本电脑</p>
+                                        <p>灰四核处理器 8GB大内存 256SSD</p>
+                                        <button>立即购买</button>
+                                   </div>
+                                   <div class="details">
+                                        <img src="https://cdn.itbegin.com//pics/admin/2017/6/636f83f02480403e94ab28376ca135f7.jpg" alt="">
+                                        <p>联想（Lenovo）拯救者</p>
+                                        <p>6599</p>
+                                        <p>联想（Lenovo）拯救者</p>
+                                        <p>R720 15.6英寸游戏</p>
+                                        <button>立即购买</button>
+                                   </div>
+                        </div>
+                        </div>
+                    </div>
+       
+       
+    </div>
+
+    <nav class="navbar navbar-default navbar-fixed-bottom navbar-inverse">
+        <div class="navbottom-content">
+            <p>2017|</p>
+            <p>Email:info@itbegin.com</p>
+        </div>
+    </nav>
+</body>
+
+</html>
