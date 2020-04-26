@@ -18,7 +18,9 @@
 <body>
     <div id="app">
         <ul>
-            <li v-for="(val) in obj">{{val}}</li>
+            <li v-for="(val,index) in q">{{val}}
+                
+            </li>
         </ul>
         <button @click="change"></button>
     </div>
@@ -26,14 +28,80 @@
     let vm = new Vue({
         el:"#app",
         data:{
-            obj:{
-                name:"a",
-                age:1
-            }
+            arr1:[
+                {
+                    typetitle:'a',
+                    typeId:1
+                },
+                {
+                    typetitle:'b',
+                    typeId:2
+                },
+                {
+                    typetitle:'c',
+                    typeId:3
+                },
+            ],
+            arr2:[
+                {
+                    newstitle:'aa',
+                    typeId:1
+                },
+                {
+                    newstitle:'bb',
+                    typeId:1
+                },
+                {
+                    newstitle:'cc',
+                    typeId:1
+                },
+                {
+                    newstitle:'dd',
+                    typeId:2
+                },
+                {
+                    newstitle:'ee',
+                    typeId:2
+                },
+                {
+                    newstitle:'ff',
+                    typeId:2
+                },
+            ],
+            q:''
             },
        methods:{
            change(){
-               this.obj.name="b"
+           
+            
+           
+                    // this.arr1.map((item) => {
+                    //     item.newsarr = [];
+                    // })
+                    // // console.log(this.arr1);
+                    // for (let i = 0; i < this.arr1.length; i++) {
+                    //     for (let j = 0; j < this.arr2.length; j++) {
+                    //         if (this.arr1[i].typeId == this.arr2[j].typeId) {
+                    //             this.arr1[i].newsarr.push(this.arr2[j].newstitle)
+                    //         }
+                    //     }
+                    // }
+                    // console.log(this.arr1);
+
+                    var arr1=[3,4,5,6]
+                    var arr2=['a','b','c','d','e','f','g']
+                        // q1=arr2[arr[0]]
+                        // q2=arr2[arr[1]]
+                        // q3=arr2[arr[2]]
+                        // q4=arr2[arr[3]]
+
+                    for(let i=0;i<arr1.length;i++){
+                        this.q=arr2[arr1[i]]
+                        console.log(i);
+                        console.log(2,this.q);
+                        
+                        
+                    }
            }
        }
     })

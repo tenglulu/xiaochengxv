@@ -17,22 +17,30 @@
    function Person(name,age){
     this.name=name;
     this.age=age;
+    this.jump=function(){
+        console.log(1);
+        
+    }
    }
    Person.prototype.say=function(){
        console.log("haha");
    }
    var p1= new Person("ls",21)
    console.log(p1);
-   //继承属性
+   p1.jump()
+   p1.say()
+   //继承属性及实例方法
    function Coder(name,age){
-    Person.call(this,name,age)//调用父类的Person.call()方法 继承属性
+    // Person.call(this,name,age) //调用父类的Person.call()方法 继承属性
    }
-   //继承方法
+//    继承方法
    Coder.prototype=new Person();
-   Coder.prototype.constructor=Coder;//Coder prtototype原型下的constructor属性应该指向它的构造函数Constructor （构造函数下的原型属性指向他的原型）
+   Coder.prototype.constructor=Coder;
+   //Coder prtototype原型下的constructor属性应该指向它的构造函数Constructor （构造函数下的原型属性指向他的原型）
 
    var c1=new Coder("zs",20);
    console.log(c1);
+   c1.jump()
    c1.say()
    
     </script>

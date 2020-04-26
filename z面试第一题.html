@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    
+    <style>
+        th{
+            border-top: 2px solid rgb(255, 174, 0);
+            border-bottom: 2px solid rgb(255, 174, 0);
+        
+        }
+        table{
+            border-collapse: collapse;
+            max-width: 800px;
+        }
+        .center,.right{
+            min-width: 100px;
+           
+        }
+        .left{
+            /* width: 100%; */
+            width: calc(100% - 200px);;
+        }
+        tr td p{
+            text-indent: -10px;
+            padding-left: 10px;
+        }
+        
+    </style>
+</head>
+
+<body>
+   <table>
+       <thead>
+           <tr>
+               <th class="left">活动</th>
+               <th class="center">不喜欢</th>
+               <th class="right">喜欢</th>
+           </tr>
+       </thead>
+       <tbody>
+           <tr>
+               <td><p>1.拆解或组装电脑拆解或组装电脑拆解或组装电脑拆解或组装电脑拆解或组装电脑拆解或组装电脑</p></td>
+               <td align="center"><input type="radio" value="dislike" name="islikeone"></td>
+               <td align="center"><input type="radio" value="like"  name="islikeone"></td>
+           </tr>
+           <tr>
+            <td><p>2.用木头做东西或参加技术课程</p></td>
+            <td align="center"><input type="radio" value="dislike" name="isliketwo"></td>
+            <td align="center"><input type="radio" value="like"  name="isliketwo"></td>
+        </tr>
+        <tr>
+            <td><p>3.加劳动技术或手工制作课程</p></td>
+            <td align="center"><input type="radio" value="dislike" name="islikethree"></td>
+            <td align="center"><input type="radio" value="like"  name="islikethree"></td>
+        </tr>
+       </tbody>
+   </table>
+  
+    <script>
+
+  
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    
+        .checkgroup .item {
+            height: 42px;
+            line-height: 42px;
+            padding: 0 10px;
+            margin: 10px 0;
+            border: 1px solid #c7c7c7;
+            border-radius: 6px;
+        }
+
+        .checkgroup.radius .item {
+            border-radius: 21px;
+        }
+
+        .checkgroup .item.selected {
+            border: 1px solid #08b292;
+            background: #08b292;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <div id="jsCheckGroup">
+        <div class="checkgroup radius">
+            <div data-val="a" class="item selected">选项a</div>
+            <div data-val="b" class="item">选项b</div>
+            <div data-val="c" class="item">选项c</div>
+            <div data-val="d" class="item">选项d</div>
+        </div>
+    </div>
+    
+
+    <script>
+        function CheckGroup(renderTo, options, isMultiple) {
+            var that = this;
+            that.renderTo = renderTo;
+            that.options = options;
+            that.isMultiple = !!isMultiple;
+            that.initHtml();
+            that.initEvent();
+        }
+        CheckGroup.prototype.initHtml = fInitHtml;
+        CheckGroup.prototype.initEvent = fInitEvent;
+        CheckGroup.prototype.toggleEl = fToggleEl;
+        CheckGroup.prototype.isSelected = fIsSelected;
+        CheckGroup.prototype.val = fVal;
+
+        function fInitHtml() {
+            var that = this;
+            // 请补全代码，拼接html字符串
+            var sHtml = '';
+            that.renderTo.innerHTML = sHtml;
+            // 请补全代码，获取checkgroup的dom元素引用
+            that.el = null;
+        }
+
+        function fInitEvent() {
+            var that = this;
+            that.el && that.el.addEventListener('click', function (event) {
+                var item = event.target;
+                item.classList.contains('item') && that.toggleEl(item);
+            });
+        }
+
+        function fToggleEl(item) {
+            console.log(item);
+            
+            // 根据当前是单选还是多选，以及当前元素是否选中，高亮/取消���亮指定的选项dom元素
+            var that = this;
+            if (that.isSelected(item)) {
+                // 请补全代码
+            } else if (that.isMultiple) {
+                // 请补全代码
+            } else {
+                // 请补全代码
+            }
+        }
+
+        function fIsSelected(item) {
+            var item = document.getElementById('d1');
+            // div.setAttribute("class", "abc");
+            // 请补全代码，判断item是否选中
+            return item;
+        }
+
+        function fVal(values) {
+            var that = this;
+            if (arguments.length === 0) {
+                // 请补全代码，获取高亮的选项元素
+                var items = null;
+                // 请补全代码，获取高亮的选项元素的data-val
+                var result = [];
+                return result;
+            }
+            !that.isMultiple && values.length > 1 && (values.length = 1);
+            // 请补全代码，获取所有的选项元素
+            var items = null;
+            // 请补全代码，在指定元素上加上高亮的class
+        }
+
+        // function sum(a,b){
+        //     console.log(a+b);
+            
+        //     return a+b
+        // }
+        // sum(1,'2')
+            // function fn(...args){
+            //     console.log(typeof args);
+                
+            // }
+            // fn(21)
+
+            // function sayhello(){
+            //     console.log(name);
+            //     console.log(age);
+            //     var name ='Tom'
+            //     let age =18
+            // }
+            // sayhello()
+
+        // var foo=1;
+        // function bar (){
+        //     alert(foo);
+        //     if(!foo){
+        //         var foo=10
+        //     }
+        //     alert(foo);
+
+        // }
+        // bar()
+        // alert(foo)
+
+            // console.log(foo);
+            // var foo=2
+            // console.log(bar);
+            // let bar=2
+            
+            // var length=10;
+            // console.log(this.length);
+
+            // function fn(){
+            //     console.log(this.length);
+                
+            // }
+            // var obj={
+            //     length:5,
+            //     methods: function (fn){
+            //         fn()
+            //     }
+
+            // }
+            // obj.methods(fn)
+            // obj.methods(fn.bind(this))
+            // obj.methods(fn.bind(obj))
+
+        // var div;
+        // var num=0;
+        // init();
+        // function init(){
+        //     div=document.getElementById("div1");
+        //     console.log(div);
+        //     selectLight();
+        // }
+ 
+        // function light(time,color){
+        //     return new Promise(function(res,rej){
+        //         num=setTimeout(res,time);
+        //         div.style.backgroundColor=color;
+        //     })
+        // }
+ 
+        // function selectLight(){
+        //     light(1000,"red").then(function(res,rej){
+        //         clearTimeout(num);
+        //         return light(3000,"black");
+        //     }).then(function(){
+        //         clearTimeout(num);
+        //         return light(5000,"white");
+        //     }).then(function(){
+        //         clearTimeout(num);
+        //         selectLight();
+        //     })
+        // }
+
+
+    //   function bar(){
+   
+    //     return foo;
+    //     foo=10;
+    //     function foo(){}
+    //     var foo='11'
+    //   }
+    //   alert(typeof bar())
+    
+      
+      
+    //   var a=/123/,
+    //   b=/123/;
+    //   console.log(a ==b);
+    //   console.log(a ===b);
+    //   console.log(a);
+      
+      
+    //   function f(){}
+    //   var a=f.prototype,b=Object.getPrototypeOf(f);
+    //  console.log(a ===b);
+
+    // let a={
+    //   aa:1,
+    //   bb:2,
+    //   cc:3,
+    //   dd:{
+    //     ee:5
+    //   },
+    //   ff:{
+    //     gg:6
+    //   }
+    // };
+    // let d=JSON.parse(JSON.stringify(a))
+    // let c={...a}
+    // let b=a;
+    // b.bb=22;
+    // c.cc=33;
+    // c.dd.ee=55;
+    // d.ff.gg=66;
+    // console.log(d);
+    
+
+  
+    // console.log(  2==[[[2]]]);
+
+    // let r=/^sjm/
+    // console.log(r.test('absjm'));
+    // console.log(r.test('phpsjm'));
+    // console.log(r.test('sjmphp'));
+    // console.log(r.test('phpsimd'));
+    
+    // let strObj='q';
+    // console.log(strObj instanceof String);
+    // console.log(typeof strObj);
+    // console.log(strObj is String);
+
+      // console.log([1<2<3,3<2<1]);
+
+      // function foo(){}
+      //   var oldName=foo.name;
+      //   foo.name ='bar';
+      //   console.log([oldName,foo.name]);
+
+      
+      
+    
+      
+    </script>
+</body>
+
+</html>

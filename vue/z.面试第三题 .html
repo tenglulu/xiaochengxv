@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <wei :str="num" v-on:addchild="addNum"></wei>
+       
+    </div>
+
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                num: 0,
+            },
+            methods:{
+                addNum(key){
+                    this.num++;
+                }
+            },
+            components: {
+                "wei": {
+                    template: `
+                    <div>
+                    <h1>{{str}}</h1>
+                    <button @click="add">add</button>
+                    </div>
+                    `,
+                   props:["str"],
+                    methods: {
+                        add() {
+                            this.$emit("addchild",10) 
+                        }
+                    },
+
+                }
+            },
+
+
+        })
+
+    </script>
+</body>
+
+</html>

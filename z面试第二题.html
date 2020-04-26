@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    
+    <style>
+       
+    </style>
+</head>
+
+<body>
+  
+  
+    <script>
+        var book={
+            name:"lili",
+            picture:{
+                small:"a",
+                middle:"b"
+            },
+            author:["作者1","作者2"],
+            fn:function(){
+
+            }
+        }
+        function clone(obj){
+            var vv=null;
+            if(typeof obj=='object'&&obj !==null){
+                vv=obj instanceof Array ? []:{};
+                for (var v in obj) {
+                   vv[v]=clone(obj[v])
+                }
+            }else{
+                vv=obj
+            }
+            return vv;
+        }
+        var obj1=clone(book);
+        book.name="tt"
+        console.log(book);
+        console.log(obj1);
+        
+    </script>
+</body>
+
+</html>
